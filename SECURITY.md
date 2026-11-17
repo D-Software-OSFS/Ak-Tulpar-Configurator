@@ -10,8 +10,8 @@
 
 | Sürüm | Güvenlik Desteği |
 | :--- | :--- |
-| **v10.0.0 (Ana Sürüm)** | :white_check_mark: Destekleniyor |
-| **< v10.0.0 (Eski Sürümler)** | :x: Desteklenmiyor |
+| **v10.0.0 F1.1 (Ana Sürüm)** | :white_check_mark: Destekleniyor |
+| **< v10.0.0 F1.1(Eski Sürümler)** | :x: Desteklenmiyor |
 
 ---
 
