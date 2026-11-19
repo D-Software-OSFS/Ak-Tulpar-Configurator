@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=AK-Tulpar Configurator
+Comment=AK-Tulpar İHA Takımı için D Software tarafından özelleştirilmiş INAV tabanlı yapılandırma aracı
+Exec=/opt/inav/ak-tulpar-configurator/ak-tulpar-configurator
+Icon=/opt/inav/ak-tulpar-configurator/resources/app/assets/linux/icon/aktulpar_icon_128.png
+Terminal=false
+Type=Application
+Categories=Utility
