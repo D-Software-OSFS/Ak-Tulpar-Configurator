@@ -1,0 +1,36 @@
+name: Mac ve Linux Build Al
+
+on:
+  workflow_dispatch: # GitHub arayüzünde "Run workflow" butonu çıkarır
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Depoyu Kopyala
+        uses: actions/checkout@v4
+
+      - name: Node.js Kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Bağımlılıkları Yükle
+        run: npm install
+
+      - name: Uygulamayı Paketle
+        run: npx electron-builder --publish never
+
+      - name: Çıktıları Yükle
+        uses: actions/upload-artifact@v4
+        with:
+          name: cikti-${{ matrix.os }}
+          path: |
+            dist/*.dmg
+            dist/*.zip
+            dist/*.AppImage
+            dist/*.deb
