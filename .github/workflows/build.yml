@@ -34,16 +34,13 @@ jobs:
         working-directory: ./build_temp
         run: yarn install
 
-      - name: Projeyi Derle (Yarn Build)
+      - name: Electron Forge ile Paketle ve Build Al (Make)
         working-directory: ./build_temp
-        run: yarn build
-
-      - name: Uygulamayı Paketle (Yarn Electron-Builder)
-        working-directory: ./build_temp
-        run: yarn electron-builder --publish never
+        run: yarn make
 
       - name: Çıktıları Yükle
         uses: actions/upload-artifact@v4
         with:
           name: cikti-${{ matrix.os }}
-          path: build_temp/dist/*
+          path: |
+            build_temp/out/make/**/*
