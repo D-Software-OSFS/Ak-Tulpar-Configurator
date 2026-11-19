@@ -30,17 +30,17 @@ jobs:
           mkdir build_temp
           cp -r "Ak-Tulpar Configurator 10.0.0 Faz1/"* build_temp/
 
-      - name: Bağımlılıkları Yükle
+      - name: Bağımlılıkları Yükle (Yarn)
         working-directory: ./build_temp
-        run: npm install
+        run: yarn install
 
-      - name: Projeyi Derle (Vite / Build)
+      - name: Projeyi Derle (Yarn Build)
         working-directory: ./build_temp
-        run: npm run build
+        run: yarn build
 
-      - name: Uygulamayı Paketle
+      - name: Uygulamayı Paketle (Yarn Electron-Builder)
         working-directory: ./build_temp
-        run: npx electron-builder --publish never
+        run: yarn electron-builder --publish never
 
       - name: Çıktıları Yükle
         uses: actions/upload-artifact@v4
