@@ -1,0 +1,233 @@
+/* general layout */
+.tab-landing {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.tab-landing .content_wrapper {
+    padding: 0;
+    min-height: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #0A2A44;
+}
+
+.tab-landing .content_top {
+    height: 140px;
+    background: #0D1528 url(./../../../images/map_bg.svg);
+    padding: 20px;
+}
+
+.tab-landing .community {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 15px 0px;
+}
+
+.tab-landing .community ul {
+    font-size: 18px;
+    text-align: center;
+    display: inline-flex;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tab-landing .community a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    padding: 0 20px;
+    border-radius: 6px;
+    background-color: #0D1528;
+    color: white;
+    text-decoration: none;
+}
+
+.tab-landing .community a:hover {
+    background-color: #00A8FF;
+    transition: all ease 0.2s;
+}
+
+.tab-landing .community ul i {
+    font-size: 28px;
+    color: white;
+    margin-right: 10px;
+}
+
+.tab-landing .community ul span {
+    color: white;
+}
+
+.tab-landing .content_mid {
+    background-color: #00A8FF;
+    overflow: hidden;
+}
+
+.tab-landing .content_mid a {
+    color: white;
+}
+
+.tab-landing .content_foot {
+    clear: both;
+    padding: 20px 20px 5px;
+}
+
+/* hero block */
+.tab-landing .logowrapper {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    width: 800px;
+    color: #C0C8D8;
+    font-size: 14px;
+    font-family: 'open_sanslight', Arial,serif;
+}
+
+.tab-landing .inavLogo {
+    width: 120px;
+    height: 120px;
+    margin: 5px auto;
+    background-image: url('./../../../images/aktulpartransparant.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.tab-landing .aktulpar-brand {
+    text-align: center;
+    margin-top: 25px;
+    padding-bottom: 20px;
+}
+
+.tab-landing .aktulpar-brand img {
+    width: 110px;
+    height: 110px;
+}
+
+.tab-landing .aktulpar-brand .brand-line {
+    color: #C0C8D8;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.tab-landing .aktulpar-brand .signature {
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+
+/* sponsors blocks */
+.sponsors .title {
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.sponsors {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: silver;
+}
+
+.sponsors ul {
+    margin-top: 5px;
+}
+
+.sponsors li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.sponsors li a {
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 35px;
+    line-height: 40px;
+    color: white;
+    font-weight: normal;
+    font-family: 'open_sanslight', Arial,serif;
+}
+
+.sponsors li a:hover {
+    background-color: rgba(255, 255, 255, 0.30);
+    color: #fff;
+}
+
+.text1, .text2, .text3 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: normal;
+    font-family: 'open_sansregular', Arial,serif;
+    font-size: 1.2em;
+	color: #C0C8D8;
+}
+
+.text3 {
+	color: #C0C8D8;
+}
+
+/* text columns */
+.tab-landing .content_mid .column .wrap {
+    padding: 0 15px;
+}
+
+.tab-landing .content_mid .column .wrap2 {
+    padding: 10px;
+}
+
+.tab-landing .content_mid h2 {
+    margin-bottom: 5px;
+    font-size: 13px;
+	color: white;
+}
+
+.tab-landing .content_mid h3 {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.tab-landing .content_mid .text1 .wrap {
+    margin-left: 0;
+}
+
+.tab-landing .content_mid .text1 {
+    width: 47%;
+}
+
+.tab-landing .content_mid .text2 {
+    width: 47%;
+}
+
+.tab-landing .content_mid .text2 ul {
+    margin-top: 10px;
+}
+
+.tab-landing .content_mid .text2 li {
+    padding: 5px 0;
+    border-top: 1px dotted silver;
+}
+
+.tab-landing .content_mid .text3 {
+    width: 23%;
+}
+
+.tab-landing .content_mid .text3 .wrap2 {
+    border: 1px solid rgba(192,200,216,0.5);
+    border-radius: 5px;
+    background: #0D1528;
+    margin-right: 25px;
+    margin-left: 20px;
+    margin-top: 5px;
+    min-height: 187px;
+    font-size: 11px;
+}
+
+.tab-landing .content_mid .text3 .donate {
+    margin-top: 10px;
+    text-align: center;
+}
