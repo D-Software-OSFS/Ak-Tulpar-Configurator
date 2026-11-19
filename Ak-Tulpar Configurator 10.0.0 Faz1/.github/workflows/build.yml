@@ -1,7 +1,7 @@
 name: Mac ve Linux Build Al
 
 on:
-  workflow_dispatch: # GitHub arayüzünde "Run workflow" butonu çıkarır
+  workflow_dispatch:
 
 jobs:
   build:
@@ -9,6 +9,9 @@ jobs:
       matrix:
         os: [macos-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: ./Ak-Tulpar Configurator 10.0.0 Faz1
 
     steps:
       - name: Depoyu Kopyala
@@ -29,8 +32,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cikti-${{ matrix.os }}
-          path: |
-            dist/*.dmg
-            dist/*.zip
-            dist/*.AppImage
-            dist/*.deb
+          path: Ak-Tulpar Configurator 10.0.0 Faz1/dist/*
