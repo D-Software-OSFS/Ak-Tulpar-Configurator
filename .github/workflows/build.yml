@@ -9,6 +9,9 @@ jobs:
       matrix:
         os: [macos-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: ./Ak-Tulpar Configurator 10.0.0 Faz1
 
     steps:
       - name: Depoyu Kopyala
@@ -25,17 +28,10 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libudev-dev
 
-      - name: Klasör Yolu Boşluk Hatasını Çözmek İçin Taşı
-        run: |
-          mkdir build_temp
-          cp -r "Ak-Tulpar Configurator 10.0.0 Faz1/"* build_temp/
-
       - name: Bağımlılıkları Yükle (Yarn)
-        working-directory: ./build_temp
         run: yarn install
 
       - name: Electron Forge ile Paketle ve Build Al (Make)
-        working-directory: ./build_temp
         run: yarn make
 
       - name: Çıktıları Yükle
@@ -43,4 +39,4 @@ jobs:
         with:
           name: cikti-${{ matrix.os }}
           path: |
-            build_temp/out/make/**/*
+            Ak-Tulpar Configurator 10.0.0 Faz1/out/make/**/*
