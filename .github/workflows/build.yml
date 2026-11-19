@@ -9,27 +9,31 @@ jobs:
       matrix:
         os: [macos-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
-    defaults:
-      run:
-        working-directory: ./Ak-Tulpar Configurator 10.0.0 Faz1
 
     steps:
       - name: Depoyu Kopyala
         uses: actions/checkout@v4
 
-      - name: Node.js Kur
+      - name: Node.js Kur (Sürüm 22)
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
+
+      - name: Klasör Yolu Boşluk Hatasını Çözmek İçin Taşı
+        run: |
+          mkdir build_temp
+          cp -r "Ak-Tulpar Configurator 10.0.0 Faz1/"* build_temp/
 
       - name: Bağımlılıkları Yükle
+        working-directory: ./build_temp
         run: npm install
 
       - name: Uygulamayı Paketle
+        working-directory: ./build_temp
         run: npx electron-builder --publish never
 
       - name: Çıktıları Yükle
         uses: actions/upload-artifact@v4
         with:
           name: cikti-${{ matrix.os }}
-          path: Ak-Tulpar Configurator 10.0.0 Faz1/dist/*
+          path: build_temp/dist/*
