@@ -34,6 +34,10 @@ jobs:
         working-directory: ./build_temp
         run: npm install
 
+      - name: Projeyi Derle (Vite / Build)
+        working-directory: ./build_temp
+        run: npm run build
+
       - name: Uygulamayı Paketle
         working-directory: ./build_temp
         run: npx electron-builder --publish never
