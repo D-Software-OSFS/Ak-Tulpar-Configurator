@@ -1,0 +1,36 @@
+name: Sadece Mac Build Al
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-mac:
+    runs-on: macos-13
+    defaults:
+      run:
+        working-directory: ./Ak-Tulpar Configurator 10.0.0 Faz1
+
+    env:
+      NODE_OPTIONS: "--max-old-space-size=4096"
+
+    steps:
+      - name: Depoyu Kopyala
+        uses: actions/checkout@v4
+
+      - name: Node.js Kur (Sürüm 22)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Bağımlılıkları Yükle (Yarn)
+        run: yarn install
+
+      - name: Electron Forge ile Mac Paketi Oluştur
+        run: yarn make
+
+      - name: Mac Çıktılarını Yükle
+        uses: actions/upload-artifact@v4
+        with:
+          name: cikti-macos
+          path: |
+            Ak-Tulpar Configurator 10.0.0 Faz1/out/make/**/*
